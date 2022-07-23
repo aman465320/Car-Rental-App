@@ -1,0 +1,124 @@
+<%- include('partials_admin/admin_header'); -%>
+
+    <div class="container-fluid" style="height: 100vh; ">
+        <div class="row ">
+            <div class="col-md-3 col-sm-12 bg-warning" style="height: 100vh;">
+                <ul class="py-3" style="list-style-type: none;font-weight: 700;font-size: 1.5rem;">
+                    <li class="py-2"> <a href="/admin/adminDashboard"
+                            class="text-decoration-none text-dark ">Dashboard</a>
+                    </li>
+                    <li class="py-2"> <a href="/admin/adminCustomers" class="text-decoration-none text-dark ">Our
+                            Customers</a> </li>
+                    <li class="py-2"> <a href="/admin/adminCars" class="text-decoration-none text-dark ">Cars
+                            Available</a>
+                    </li>
+                    <li class="py-2"> <a href="/addCarForm" class="text-decoration-none text-dark ">Add Cars</a>
+                    </li>
+                    <li class="py-2"> <a href="/admin/adminRentals" class="text-decoration-none text-dark ">All
+                            Rentals</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-12 text-center" style="height: 100vh;">
+
+                <div class="container-fluid">
+                    <div class="table-responsive">
+
+                        <table class="my-1 table" style="width: 100%;">
+                            <thead>
+
+                                <tr style="border:1px solid black ;background-color: #F5F5F5;">
+                                    <th scope="col" style="border:1px solid black ;">S.Number</th>
+                                    <th scope="col" style="border:1px solid black ;">Full Name</th>
+                                    <th scope="col" style="border:1px solid black ;">Pickup Location</th>
+                                    <th scope="col" style="border:1px solid black ;">Email Address</th>
+                                    <th scope="col" style="border:1px solid black ;">Drop Location</th>
+                                    <th scope="col" style="border:1px solid black ;">Mobile Number</th>
+                                    <th scope="col" style="border:1px solid black ;">Pickup Date</th>
+                                    <th scope="col" style="border:1px solid black ;">Drop Date</th>
+                                    <th scope="col" style="border:1px solid black ;">Pincode <br>(Pickup Location) </th>
+                                    <th scope="col" style="border:1px solid black ;">Car Name</th>
+                                    <th scope="col" style="border:1px solid black ;">Booking ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <% for(var i=0 ; i < rentalItems.length; i++){ %>
+                                    <tr>
+
+                                        <td style="border:1px solid black ;">
+
+                                            <%= [i+1] %>
+
+                                        </td>
+
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].fullName %>
+
+                                        </td>
+
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].pickUpLocation %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].emailID %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].dropLocation %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].mobileNumber %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].pickupDate %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].dropDate %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].pinCode %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i].carName %>
+
+                                        </td>
+                                        <td style="border:1px solid black ;">
+
+                                            <%= rentalItems[i]._id %>
+
+                                        </td>
+
+                                    </tr>
+                                    <% } %>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials_admin/admin_footer'); -%>

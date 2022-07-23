@@ -1,0 +1,35 @@
+<%- include('partials/header'); -%>
+    <div class="container my-5 w-75 shadow px-5 pt-3 pb-5">
+        <h3 class="my-5">Publish Your Review</h3>
+
+        <form method="post" action="/publish">
+
+
+
+
+            <div class="mb-3">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Name"
+                    name="fullName">
+            </div>
+
+            <div class="mb-3">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Email" value=" <%= publisherEmail %>" 
+                    name="emailID" disabled>
+            </div>
+
+            <div class="mb-3">
+
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your Review"
+                    name="postBody"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Publish</button>
+
+
+        </form>
+    </div>
+    <%- include('partials/footer'); -%>
+    </body>
+    
+    </html>

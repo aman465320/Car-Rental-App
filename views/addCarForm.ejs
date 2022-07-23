@@ -1,0 +1,86 @@
+<%- include('partials_admin/admin_header'); -%>
+    <div class="container-fluid" style="height: 100vh; width: 100vw;">
+        <div class="row ">
+            <div class="col-md-3 aside  col-sm-12 bg-warning" style="height: 100vh;">
+                <ul class="py-3" style="list-style-type: none;font-weight: 700;font-size: 1.5rem;">
+                    <li class="py-2"> <a href="/admin/adminDashboard"
+                            class="text-decoration-none text-dark ">Dashboard</a>
+                    </li>
+
+
+                    <li class="py-2"> <a href="/admin/adminCustomers" class="text-decoration-none text-dark ">Our
+                            Customers</a> </li>
+
+
+                    <li class="py-2"> <a href="/admin/adminCars" class="text-decoration-none text-dark ">Cars
+                            Available</a>
+                    </li>
+
+
+                    <li class="py-2">
+
+                        <a href="/addCarForm" class="text-decoration-none text-dark ">Add Cars</a>
+
+                    </li>
+                    <li class="py-2"> <a href="/admin/adminRentals" class="text-decoration-none text-dark ">All
+                            Rentals</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-12" style="height: 100vh;">
+                <div class="container-fluid my-3">
+
+
+                    <form action="/addCarform" method="post">
+                        <div class="mb-3 ">
+
+                            <label for="email" class="form-label " style="font-weight: 500;">Car Name</label>
+                            <input type="text" class="form-control" name="carName" required>
+
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="price" class="form-label " style="font-weight: 500;">Price</label>
+                            <input type="text" class="form-control" name="price" required>
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="baggage" class="form-label " style="font-weight: 500;">Baggage</label>
+                            <input type="text" class="form-control" name="baggage" required minlength="1">
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="seats" class="form-label " style="font-weight: 500;">Seats</label>
+                            <input type="text" class="form-control" name="seats" required minlength="1">
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="fuel" class="form-label " style="font-weight: 500;">Fuel</label>
+                            <input type="text" class="form-control" name="fuel" required>
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="type" class="form-label " style="font-weight: 500;">Type</label>
+                            <input type="text" class="form-control" name="type" required>
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="transmission" class="form-label " style="font-weight: 500;">Transmission</label>
+                            <input type="text" class="form-control" name="transmission" required>
+                        </div>
+                        <div class="mb-3 ">
+
+                            <label for="imgURL" class="form-label " style="font-weight: 500;">Image URL</label>
+                            <input type="text" class="form-control" name="imgURL" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials_admin/admin_footer'); -%>

@@ -1,0 +1,89 @@
+<%- include('partials/header'); -%>
+
+
+    <div class="card w-75 shadow container my-4 p-2">
+        <div class="card-body my-3 d-flex ">
+            <div class="mx-4">
+                <i class="fa-solid fa-user" style="font-size: 2rem;"></i>
+            </div>
+            <div>
+
+                <h5 class="card-title text-primary" style=" font-size : 2.5vw + 0.1em">
+                    John Doe
+                </h5>
+                <p class="card-text" style="font-size: 4vw + 0.1em;">
+                I have rented cars from Fast Rental on 3 different occasions, and they have been excellent each time. The prices are
+                competitive, the cars are clean & well maintained and the customer service is great. I would recommend them to anyone
+                looking for a rental car in this area.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card w-75 shadow container my-4 p-2">
+        <div class="card-body my-3 d-flex ">
+            <div class="mx-4">
+                <i class="fa-solid fa-user" style="font-size: 2rem;"></i>
+            </div>
+            <div>
+                <h5 class="card-title text-primary" style=" font-size : 2.5vw + 0.1em">
+                    Jane Smith
+                </h5>
+                <p class="card-text" style="font-size: 4vw + 0.1em;">
+                    I have used Fast Rental for both my personal and professional needs. I've rented cars, bikes, and equipment from them.
+                    They have a huge inventory of products to choose from and their prices are competitive. If you need something quickly,
+                    they'll get it to you in just a few hours! I highly recommend this company for all your rental needs!
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card w-75 shadow container my-4 p-2">
+        <div class="card-body my-3 d-flex ">
+            <div class="mx-4">
+                <i class="fa-solid fa-user" style="font-size: 2rem;"></i>
+            </div>
+            <div>
+                <h5 class="card-title text-primary" style=" font-size : 2.5vw + 0.1em">
+                    Antony Davis
+                </h5>
+                <p class="card-text" style="font-size: 4vw + 0.1em;">
+                I was looking for a rental company that would deliver to me on the same day. I found Fast Rental and I am very happy
+                with the service. They were able to deliver my car on the same day and it was clean and in good condition! It was a
+                great experience and I will definitely recommend them to my friends!
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <% review.forEach(function(item){ %>
+        <div class="card w-75 shadow container my-4 p-2">
+            <div class="card-body my-3 d-flex ">
+                <div class="mx-4">
+                    <i class="fa-solid fa-user" style="font-size: 2rem;"></i>
+                </div>
+                <div>
+
+                    <h5 class="card-title text-primary" style=" font-size : 2.5vw + 0.1em">
+                        <%= item.fullName %>
+                    </h5>
+                    <p class="card-text" style="font-size: 4vw + 0.1em;">
+                        <%= item.postBody %>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <% }) %>
+
+
+            <%- include('partials/footer'); -%>
+                </body>
+
+                </html>

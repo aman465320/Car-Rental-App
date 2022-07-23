@@ -1,0 +1,76 @@
+<%- include('partials_admin/admin_header'); -%>
+
+    <div class="container-fluid" style="height: 100vh; ">
+        <div class="row ">
+            <div class="col-md-3 col-sm-12 bg-warning" style="height: 100vh;">
+                <ul class="py-3" style="list-style-type: none;font-weight: 700;font-size: 1.5rem;">
+                    <li class="py-2"> <a href="/admin/adminDashboard"
+                            class="text-decoration-none text-dark ">Dashboard</a>
+                    </li>
+                    <li class="py-2"> <a href="/admin/adminCustomers" class="text-decoration-none text-dark ">Our
+                            Customers</a> </li>
+                    <li class="py-2"> <a href="/admin/adminCars" class="text-decoration-none text-dark ">Cars
+                            Available</a>
+                    </li>
+                    <li class="py-2"> <a href="/addCarForm" class="text-decoration-none text-dark ">Add Cars</a>
+                    </li>
+
+                    <li class="py-2"> <a href="/admin/adminRentals" class="text-decoration-none text-dark ">All
+                            Rentals</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-12 text-center" style="height: 100vh;">
+
+                <div class="container-fluid">
+                    <div class="table-responsive">
+
+                        <table class="my-1 table" style="width: 100%;">
+                            <thead>
+
+                                <tr style="border:1px solid black ;background-color: #F5F5F5;">
+                                    <th scope="col" style="border:1px solid black ;">S.Number</th>
+                                    <th scope="col" style="border:1px solid black ;">Full Name</th>
+                                    <th scope="col" style="border:1px solid black ;">Email ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <% for(var i=0 ; i < customerItems.length; i++){ %>
+                                    <tr>
+
+                                        <td style="border:1px solid black ;">
+
+                                            <%= [i+1] %>
+
+                                        </td>
+
+                                        <td style="border:1px solid black ;">
+
+                                            <%= customerItems[i].fullName %>
+
+                                        </td>
+
+                                        <td style="border:1px solid black ;">
+
+                                            <%= customerItems[i].username %>
+
+
+                                        </td>
+
+                                    </tr>
+                                    <% } %>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials_admin/admin_footer'); -%>

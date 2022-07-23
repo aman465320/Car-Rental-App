@@ -1,0 +1,142 @@
+<%- include('partials_admin/admin_header'); -%>
+
+    <div class="container-fluid" style="height: 100vh;width: 100%;">
+        <div class="row ">
+            <div class="col-md-3 aside  col-sm-12 bg-warning" style="height: 100vh;">
+                <ul class="py-3" style="list-style-type: none;font-weight: 700;font-size: 1.5rem;">
+                    <li class="py-2"> <a href="/admin/adminDashboard"
+                            class="text-decoration-none text-dark ">Dashboard</a>
+                    </li>
+
+
+                    <li class="py-2"> <a href="/admin/adminCustomers" class="text-decoration-none text-dark ">Our
+                            Customers</a> </li>
+
+
+                    <li class="py-2"> <a href="/admin/adminCars" class="text-decoration-none text-dark ">Cars
+                            Available</a>
+                    </li>
+
+
+                    <li class="py-2">
+
+                        <a href="/addCarForm" class="text-decoration-none text-dark ">Add Cars</a>
+
+                    </li>
+
+
+                    <li class="py-2"> <a href="/admin/adminRentals" class="text-decoration-none text-dark ">All
+                            Rentals</a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="col-md-9  col-sm-12 text-center" style="height: 100vh;">
+
+                <div class="container-fluid">
+                    <div class="table-responsive">
+
+                        <table class="my-1 table" style="width: 100%;">
+                            <thead>
+
+                                <tr style="border:1px solid black ;">
+                                    <th scope="col" style="border:1px solid black ;">Image</th>
+                                    <th scope="col" style="border:1px solid black ;">Car Name</th>
+                                    <th scope="col" style="border:1px solid black ;">Price(in &#8377;)</th>
+                                    <th scope="col" style="border:1px solid black ;">Baggage</th>
+                                    <th scope="col" style="border:1px solid black ;">Seats</th>
+                                    <th scope="col" style="border:1px solid black ;">Fuel</th>
+                                    <th scope="col" style="border:1px solid black ;">Type</th>
+                                    <th scope="col" style="border:1px solid black ;">Transmission</th>
+                                    <th scope="col" style="border:1px solid black ;">Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                <% carItems.forEach(function(item){ %>
+                                    <form action="/deleteCar" method="post">
+                                        <tr>
+
+                                            <td style="border:1px solid black ;">
+                                                <div class="container-fluid">
+                                                    <img src="<%= item.imgURL %>" class="img-responsive"
+                                                        style="height: 100px;width: 130px;" alt="">
+                                                </div>
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.carName %>
+
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.price %>
+
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.baggage %>
+
+
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.seats %>
+
+
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.fuel %>
+
+
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.type %>
+
+
+                                            </td>
+
+                                            <td style="border:1px solid black ;">
+
+                                                <%= item.transmission %>
+
+
+                                            </td>
+                                            <td style="border:1px solid black ;" class="me-auto">
+
+                                                <button type="submit" name="deleteCar" value="<%= item._id %>"
+                                                    class="btn btn-danger" style="border: 0px;">Delete</button>
+                                                <br>
+
+                                            </td>
+
+
+                                        </tr>
+                                    </form>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials_admin/admin_footer'); -%>

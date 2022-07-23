@@ -1,0 +1,28 @@
+<%- include('partials_admin/admin_header'); -%>
+
+    <div class="container-fluid" style="height: 100vh; ">
+        <div class="row ">
+            <div class="col-md-3 col-sm-12 bg-warning" style="height: 100vh;">
+                <ul class="py-3" style="list-style-type: none;font-weight: 700;font-size: 1.5rem;">
+                    <li class="py-2"> <a href="/admin/adminDashboard"
+                            class="text-decoration-none text-dark ">Dashboard</a>
+                    </li>
+                    <li class="py-2"> <a href="/admin/adminCustomers" class="text-decoration-none text-dark ">Our
+                            Customers</a> </li>
+                    <li class="py-2"> <a href="/admin/adminCars" class="text-decoration-none text-dark ">Cars
+                            Available</a>
+                    </li>
+                    <li class="py-2"> <a href="/addCarForm" class="text-decoration-none text-dark ">Add Cars</a>
+                    </li>
+                    <li class="py-2"> <a href="/admin/adminRentals" class="text-decoration-none text-dark ">All
+                            Rentals</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-12 text-center" style="height: 100vh;">This is Dashboard</div>
+
+        </div>
+
+    </div>
+
+    <%- include('partials_admin/admin_footer'); -%>

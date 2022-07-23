@@ -1,0 +1,65 @@
+<%- include('partials/header') -%>
+    <div class="container d-flex flex-column justify-content-center align-items-center w-75">
+
+        <h3 class="my-5 shadow">My Rentals</h3>
+
+        <% myrentals.forEach(function(item){ %>
+            <form action="/deleteRental" method="post">
+
+                <div class="container my-5 p-5 shadow" style="border: 2px solid black;">
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 p-1">FullName : <%= item.fullName %>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-1">Pick Up Location : <%= item.pickUpLocation %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 p-1">Email ID : <%= item.emailID %>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-1">Drop Location : <%= item.dropLocation %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 p-1">Mobile Number : <%= item.mobileNumber %>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-1">Pickup Date : <%= item.pickupDate %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 p-1"> Drop Date : <%= item.dropDate %>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-1"> Pincode(Your Location) : <%= item.pinCode %>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 p-1">Car Name : <%= item.carName %>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-1">Booking ID : <%= item._id %>
+                        </div>
+                    </div>
+                    
+                    <div class="row ">
+                        <div class="col p-1 text-center mt-5">
+
+                            <button class="btn btn-primary" name="cancellRental" value="<%= item._id %>" type="submit">
+                                Cancell Rental</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+            <% }) %>
+
+
+    </div>
+    <%- include('partials/footer') -%>
+        </body>
+
+        </html>

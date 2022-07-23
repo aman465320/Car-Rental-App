@@ -1,0 +1,75 @@
+<%- include('partials/header'); -%>
+    <div class="container w-75 my-5">
+        <h3 class="my-5">Personal Details</h3>
+
+        <form class="row g-3" method="post" action="/bookedCar">
+            <div class="col-md-6">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" required id="inputFullName" name="fullName">
+            </div>
+
+            <div class="col-md-6">
+                <label for="pickUpLocation" class="form-label">Set Pick Up location</label>
+                <input type="text" class="form-control" required id="inputPickupLocation" name="pickUpLocation">
+            </div>
+
+            <div class="col-md-6">
+                <label for="emailID" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="inputEmailAddress" minlength="6" name="emailID"
+                    value="<%= bookingUserEmailId %>" disabled>
+            </div>
+
+            <div class="col-md-6">
+                <label for="dropLocation" class="form-label">Set Drop location</label>
+                <input type="text" class="form-control" required id="inputDropLocation" name="dropLocation">
+            </div>
+
+            <div class="col-md-6">
+                <label for="mobileNumber" class="form-label">Mobile Number</label>
+                <input type="number" class="form-control" required id="inputMobileNumber" name="mobileNumber" minlength="10"
+                    maxlength="10">
+            </div>
+
+            <div class="col-md-6">
+                <label for="pickupDate" class="form-label">Pickup Date</label>
+                <input type="datetime-local" class="form-control" required id="inputPickupDate" name="pickupDate"
+                    placeholder="dd-mm-yy">
+            </div>
+
+
+            <div class="col-md-6">
+                <label for="dropDate" class="form-label">Drop Date</label>
+                <input type="datetime-local" class="form-control" required id="inputDropDate" name="dropDate"
+                    placeholder="dd-mm-yy">
+            </div>
+
+
+            <div class="col-md-6">
+                <label for="pinCode" class="form-label">Pincode</label>
+                <input type="number" class="form-control" required id="inputPincode" placeholder="ex -302020"
+                    name="pinCode" minlength="6" maxlength="6">
+            </div>
+
+
+            <div class="col-md-6">
+                <label for="carName" class="form-label">Car Name</label>
+                <input type="text" class="form-control" required id="inputPincode"
+                    placeholder="Enter Valid Car Name only" name="carName">
+            </div>
+
+
+            <div class="col-md-12 my-5 d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-lg  btn-primary">Next</button>
+            </div>
+
+        </form>
+
+
+    </div>
+    <%- include('partials/footer'); -%>
+
+
+
+        </body>
+
+        </html>

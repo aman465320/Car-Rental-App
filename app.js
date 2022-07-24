@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { application } = require("express");
 const passport = require("passport");
-const dotenv = require("dotenv");
 
 const passportLocalMongoose = require("passport-local-mongoose");
 const session = require("express-session");
@@ -13,9 +12,8 @@ const { check, validationResult } = require("express-validator");
 
 const app = express();
 
-dotenv.config({ path: "./config.env" });
-
-const DB = process.env.DATABASE;
+const DB =
+  "mongodb+srv://amanmathur:customerDB@cluster0.zudrg.mongodb.net/customerDB?retryWrites=true&w=majority";
 
 mongoose
   .connect(DB, { useNewUrlParser: true })

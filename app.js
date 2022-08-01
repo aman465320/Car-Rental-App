@@ -186,22 +186,30 @@ app.post("/contact", (req, res) => {
   });
 });
 
-app.post("/login", (req, res) => {
-  const credential = new Credential({
-    emailID: req.body.username,
-    password: req.body.password,
-    fullName: req.body.fullName,
-  });
-  req.logIn(credential, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      passport.authenticate("local")(req, res, () => {
-        res.redirect("/");
-      });
-    }
-  });
-});
+// app.post("/login", (req, res) => {
+//   const credential = new Credential({
+//     emailID: req.body.username,
+//     password: req.body.password,
+//     fullName: req.body.fullName,
+//   });
+//   req.logIn(credential, (err) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       passport.authenticate("local")(req, res, () => {
+//         res.redirect("/");
+//       });
+//     }
+//   });
+// });
+
+app.post(
+  "/login",
+  passport.authenticate("local", { failureRedirect: "/login" }),
+  function (req, res) {
+    res.redirect("/");
+  }
+);
 
 app.post("/signUp", (req, res) => {
   Credential.register(

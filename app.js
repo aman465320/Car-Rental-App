@@ -301,7 +301,11 @@ app.post("/adminLogin", (req, res) => {
       if (foundUser) {
         if (foundUser.password === password) {
           res.render("admin");
+        } else {
+          res.redirect("/admin");
         }
+      } else {
+        res.redirect("/admin");
       }
     }
   });
